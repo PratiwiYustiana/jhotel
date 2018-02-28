@@ -7,18 +7,20 @@
  */
 public class Pesanan
 {
+    private double biaya;
+    private Customer pelanggan;
+    private String nama_pelanggan;
+    private String jenis_kamar;
+    private boolean isDiproses;
+    private boolean isSelesai;
+    
     /**
      * Constructor for objects of class Pesanan
      */
-    private Pesanan()
+    public Pesanan()
     {
         // initialise instance variables
-        double biaya = 0;
-        Customer pelanggan = new Customer();
-        String nama_pelanggan = null;
-        String jenis_kamar = null;
-        boolean isDiproses = false;
-        boolean isSelesai = false;
+        
     }
 
     /**
@@ -27,11 +29,6 @@ public class Pesanan
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void Pesanan()
-    {
-        // put your code here
-        return;
-    }
     public double getBiaya()
     {
         return 0;

@@ -7,13 +7,15 @@
  */
 public class DatabaseCustomer
 {
+    private String[] list_customer;
+    
     /**
      * Constructor for objects of class DatabaseCustomer
      */
-    private DatabaseCustomer()
+    public DatabaseCustomer()
     {
         // initialise instance variables
-        String[] lis_customer = null;
+        
     }
 
     /**

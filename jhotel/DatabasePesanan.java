@@ -7,13 +7,15 @@
  */
 public class DatabasePesanan
 {
+    private String[] list_pesanan;
+    
     /**
      * Constructor for objects of class DatabasePesanan
      */
-    private DatabasePesanan()
+    public DatabasePesanan()
     {
         // initialise instance variables
-        String[] list_pesanan = null;
+        
     }
 
     /**

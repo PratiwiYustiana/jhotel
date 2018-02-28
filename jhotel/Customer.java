@@ -7,14 +7,15 @@
  */
 public class Customer
 {
+    protected int id;
+    protected String nama;
+    
     /**
      * Constructor for objects of class Customer
      */
-    protected Customer()
+    public Customer(int id, String nama)
     {
         // initialise instance variables
-        int id = 0;
-        String nama = null;
         
     }
 
@@ -24,11 +25,6 @@ public class Customer
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void Customer(int id, String nama)
-    {
-        // put your code here
-        return;
-    }
     public int getID()
     {
         return 0;
