@@ -24,6 +24,5 @@ public class JHotel
     public void main(String args[])
     {
         // put your code here
-        return;
     }
 }

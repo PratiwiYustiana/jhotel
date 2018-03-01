@@ -45,21 +45,17 @@ public class Pesanan
     {
         return false;
     }
-    public double setBiaya(double biaya)
+    public void setBiaya(double biaya)
     {
-        return 0;
     }
-    public Customer setPelanggan(Customer baru)
+    public void setPelanggan(Customer baru)
     {
-        return null;
     }
-    public boolean setStatusDiproses(boolean diproses)
+    public void setStatusDiproses(boolean diproses)
     {
-        return false;
     }
-    public boolean setStatusSelesai(boolean diproses)
+    public void setStatusSelesai(boolean diproses)
     {
-        return false;
     }
         
 }
