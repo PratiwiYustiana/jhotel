@@ -1,12 +1,13 @@
 
 /**
- * Write a description of class Pesanan here.
+ * class Pesanan.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
 public class Pesanan
 {
+    //instance variable
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
@@ -15,47 +16,82 @@ public class Pesanan
     private boolean isSelesai;
     
     /**
-     * Constructor for objects of class Pesanan
+     * Constructor untuk objek pada kelas Pesanan
      */
-    public Pesanan()
+    public Pesanan(double biaya, Customer pelanggan)
     {
-        // initialise instance variables
-        
+        // assign instance variables
+        this.biaya = biaya;
+        this.pelanggan = pelanggan;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method pada kelas Pesanan
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
+    /**
+     * mengakses nilai Biaya
+     */ 
     public double getBiaya()
     {
-        return 0;
+        return biaya;
     }
+    /**
+     * mengakses Pelanggan
+     */
     public Customer getPelanggan()
     {
-        return null;
+        return pelanggan;
     }
+    /**
+     * mengakses StatusDiproses
+     */
     public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
+    /**
+     * mengakses StatusSelesai
+     */
     public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
+    /**
+     * meng-update Biaya
+     */
     public void setBiaya(double biaya)
     {
+        this.biaya =  biaya;
     }
+    /**
+     * meng-update Pelanggan
+     */
     public void setPelanggan(Customer baru)
     {
+        pelanggan = baru;
     }
+    /**
+     * meng-update StatusDiproses
+     */
     public void setStatusDiproses(boolean diproses)
     {
+        isDiproses = diproses;
     }
+    /**
+     * meng-update StatusSelesai
+     */
     public void setStatusSelesai(boolean diproses)
     {
+        isSelesai = diproses;
     }
-        
+    /**
+     * mencetak data biaya
+     */
+    public void printData()
+    {
+        System.out.println(biaya);
+    }
 }

@@ -1,16 +1,16 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * class DatabasePesanan.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class DatabasePesanan
 {
     private String[] list_pesanan;
     
     /**
-     * Constructor for objects of class DatabasePesanan
+     * Constructor untuk objek pada kelas DatabasePesanan
      */
     public DatabasePesanan()
     {
@@ -19,7 +19,7 @@ public class DatabasePesanan
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * method kelas DatabasePesanan
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y

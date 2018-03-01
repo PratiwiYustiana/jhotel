@@ -1,16 +1,16 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * class DatabaseCustomer.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class DatabaseCustomer
 {
     private String[] list_customer;
     
     /**
-     * Constructor for objects of class DatabaseCustomer
+     * Constructor untuk objek pada kelas DatabaseCustomer
      */
     public DatabaseCustomer()
     {
@@ -19,7 +19,7 @@ public class DatabaseCustomer
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * method kelas DatabaseCostumer
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y

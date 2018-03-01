@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class JHotel here.
+ * class JHotel.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class JHotel
 {
@@ -16,7 +16,7 @@ public class JHotel
         
     }
     /**
-     * An example of a method - replace this comment with your own
+     * method kelas JHotel
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y

@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Customer here.
+ * class Customer.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class Customer
 {
@@ -11,32 +11,54 @@ public class Customer
     protected String nama;
     
     /**
-     * Constructor for objects of class Customer
+     * Constructor untuk objek pada kelas Customer
      */
     public Customer(int id, String nama)
     {
-        // initialise instance variables
-        
+        // assign instance variables
+        this.id = id;
+        this.nama = nama;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * method kelas Customer
      *
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
+    /**
+     * mengakses ID
+     */
     public int getID()
     {
-        return 0;
+        return id;
     }
+    /**
+     * mengakses Nama
+     */
     public String getNama()
     {
-        return null;
+        return nama;
     }
+    /**
+     * meng-update ID
+     */
     public void setID(int id)
     {
+        this.id = id;
     }
+    /**
+     * meng-update nama
+     */
     public void setNama(String nama)
     {
+        this.nama = nama;
+    }
+    /**
+     * mencetak data nama
+     */
+    public void printData()
+    {
+        System.out.println(nama);
     }
 }
