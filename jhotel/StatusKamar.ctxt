@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=StatusKamar
+comment0.text=\r\n\ Enumeration\ class\ StatusKamar\r\n\r\n\ @author\ Pratiwi\ Yustiana\r\n\ @version\ 08/03/2018\r\n
+comment1.params=statusKamar
+comment1.target=StatusKamar(java.lang.String)
+comment1.text=\r\n\ Method\ \r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

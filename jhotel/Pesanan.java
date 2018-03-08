@@ -14,6 +14,7 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
     
     /**
      * Constructor untuk objek pada kelas Pesanan
@@ -59,6 +60,10 @@ public class Pesanan
     {
         return isSelesai;
     }
+    public Room getRoom()
+    {
+        return kamar;
+    }
     /**
      * meng-update Biaya
      */
@@ -86,6 +91,10 @@ public class Pesanan
     public void setStatusSelesai(boolean diproses)
     {
         isSelesai = diproses;
+    }
+    public void setRoom(Room kamar)
+    {
+        this.kamar = kamar;
     }
     /**
      * mencetak data biaya

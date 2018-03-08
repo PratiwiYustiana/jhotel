@@ -27,11 +27,9 @@ public class Hotel
     /**
      * method kelas Hotel
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    /**
-     * mengakses Bintang
+     *
+     * mengakses Bintang 
+     * @return    bintang untuk mengembalikan nilai dari variable bintang
      */
     public int getBintang()
     {
@@ -39,6 +37,7 @@ public class Hotel
     }
     /**
      * mengakses Nama
+     * @return nama 
      */
     public String getNama()
     {
@@ -46,6 +45,7 @@ public class Hotel
     }
     /**
      * mengakses Lokasi
+     * 
      */
     public Lokasi getLokasi()
     {
