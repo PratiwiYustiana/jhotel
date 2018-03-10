@@ -1,6 +1,6 @@
 
 /**
- * class Administrasi
+ * class Administrasi - mengatur jalannya pesanan
  *
  * @author Pratiwi Yustiana
  * @version 08/03/2018
@@ -8,65 +8,84 @@
 public class Administrasi
 {
     /**
-     * Constructor for objects of class Administrasi
+     * Constructor untuk objek pada kelas Administrasi
      */
     public Administrasi()
     {
         // initialise instance variables
         
     }
-
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * method untuk memproses kamar yang akan di-assign
+     * @param pesan, kamar
      */
-    public void pesananDitugaskan(Pesanan pesan, Room kamar)
+    public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
         roomAmbilPesanan(pesan, kamar);
     }
-    public void roomAmbilPesanan(Pesanan pesan, Room kamar)
+    /**
+     * method untuk menyatakan bahwa kamar sudah dipesan (booked)
+     * @param pesan,kamar
+     */
+    public static void roomAmbilPesanan(Pesanan pesan, Room kamar)
     {
-        kamar.setStatusKamar(StatusKamar.Booked);
+        kamar.setStatusKamar(StatusKamar.BOOKED);
         kamar.setPesanan(pesan);
     }
-    public void roomLepasPesanan(Room kamar)
+    /**
+     * method untuk menyatakan bahwa kamar sudah kosong (vacant)
+     * @param kamar
+     */
+    public static void roomLepasPesanan(Room kamar)
     {
-        kamar.setStatusKamar(StatusKamar.Vacant);
+        kamar.setStatusKamar(StatusKamar.VACANT);
         kamar.setPesanan(null);
     }
-    public void pesananDibatalkan(Room kamar)
+    /**
+     * mehod untuk mengubah status kamar karena pesanan dibatalkan
+     * @param kamar
+     */
+    public static void pesananDibatalkan(Room kamar)
     {
         kamar.getPesanan().setStatusSelesai(false);
         kamar.getPesanan().setStatusDiproses(false);
         kamar.setPesanan(null);
         roomLepasPesanan(kamar);
     }
-    public void pesananSelesai(Room kamar)
+    /**
+     * method untuk mengubah status kamar karena pesanan telah selesai
+     * @param kamar
+     */
+    public static void pesananSelesai(Room kamar)
     {
         kamar.getPesanan().setStatusSelesai(true);
         kamar.getPesanan().setStatusDiproses(false);
         kamar.setPesanan(null);
         roomLepasPesanan(kamar);
     }
-    public void pesananDibatalkan(Pesanan pesan)
+    /**
+     * method untuk mengubah status pesanan karena pesanan dibatalkan
+     * @param pesan
+     */
+    public static void pesananDibatalkan(Pesanan pesan)
     {
-        Room kamar = pesan.getRoom();
+        roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
-        roomLepasPesanan(kamar);
     }
-    public void pesananSelesai(Pesanan pesan)
+    /**
+     * method untuk mengubah status pesanan karena pesanan telah selesai
+     * @param pesan
+     */
+    public static void pesananSelesai(Pesanan pesan)
     {
-        Room kamar = pesan.getRoom();
+        roomLepasPesanan(pesan.getRoom());
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setRoom(null);
-        roomLepasPesanan(kamar);
     }
 }

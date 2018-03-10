@@ -1,13 +1,13 @@
 
 /**
- * class Hotel.
+ * class Hotel - menunjukkan nama hotel, lokasi hotel, dan bintang hotel
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
  */
 public class Hotel
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private String nama;
     private Lokasi lokasi;
     private int bintang;
@@ -23,20 +23,16 @@ public class Hotel
         this.lokasi = lokasi;
         this.bintang = bintang;
     }
-
     /**
-     * method kelas Hotel
-     *
-     *
-     * mengakses Bintang 
-     * @return    bintang untuk mengembalikan nilai dari variable bintang
+     * method untuk mengambil nilai bintang pada hotel
+     * @return bintang
      */
     public int getBintang()
     {
         return bintang;
     }
     /**
-     * mengakses Nama
+     * mehod untuk mengambil nama hotel
      * @return nama 
      */
     public String getNama()
@@ -44,39 +40,46 @@ public class Hotel
         return nama;
     }
     /**
-     * mengakses Lokasi
-     * 
+     * method untuk mengambil nilai lokasi hotel
+     * @return lokasi
      */
     public Lokasi getLokasi()
     {
         return lokasi;
     }
     /**
-     * meng-update Nama
+     * method untuk dapat mengatur nama hotel
+     * @param nama
      */
     public void setNama(String nama)
     {
         this.nama = nama;
     }
     /**
-     * meng-update Lokasi
+     * method untuk dapat mengatur lokasi hotel
+     * @param lokasi
      */
     public void setLokasi(Lokasi lokasi)
     {
         this.lokasi = lokasi;
     }
     /**
-     * meng-update Bintang
+     * method untuk dapat mengatur nilai bintang pada hotel
+     * @param bintang
      */
     public void setBintang(int bintang)
     {
         this.bintang = bintang;
     }
     /**
-     * mencteak data nama
+     * method untuk mencetak data hotel berupa nama, lokasi, dan bintang
+     * 
      */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("\nHotel");
+        System.out.println("Nama Hotel\t: " + nama);
+        System.out.println("Lokasi\t\t: " + lokasi.getDeskripsi());
+        System.out.println("Bintang\t\t: " + bintang);
     }
 }

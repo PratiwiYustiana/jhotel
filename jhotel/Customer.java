@@ -1,6 +1,6 @@
 
 /**
- * class Customer.
+ * class Customer - berisi data pelanggan berupa id dan nama
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -19,46 +19,46 @@ public class Customer
         this.id = id;
         this.nama = nama;
     }
-
     /**
-     * method kelas Customer
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    /**
-     * mengakses ID
+     * method untuk mengambil nomor id pelanggan
+     * @return id
      */
     public int getID()
     {
         return id;
     }
     /**
-     * mengakses Nama
+     * method untuk mengambil nama pelanggan
+     * @return nama
      */
     public String getNama()
     {
         return nama;
     }
     /**
-     * meng-update ID
+     * method untuk dapat mengatur nomor id pelanggan
+     * @param id
      */
     public void setID(int id)
     {
         this.id = id;
     }
     /**
-     * meng-update nama
+     * method untuk dapat mengatur nama pelanggan
+     * @param nama
      */
     public void setNama(String nama)
     {
         this.nama = nama;
     }
     /**
-     * mencetak data nama
+     * method untuk dapat mencetak id dan nama pelanggan
+     * 
      */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("\nCustomer");
+        System.out.println("ID\t\t: " + id);
+        System.out.println("Nama\t\t: " + nama);
     }
 }

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=JHotel
-comment0.text=\r\n\ class\ JHotel.\r\n\r\n\ @author\ Pratiwi\ Yustiana\r\n\ @version\ 01/03/2018\r\n
+comment0.text=\r\n\ class\ JHotel\ -\ berisi\ method\ main\ yang\ akan\ dijalankan\ pertama\ kali\r\n\r\n\ @author\ Pratiwi\ Yustiana\r\n\ @version\ 01/03/2018\r\n
 comment1.params=
 comment1.target=JHotel()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pesanan\r\n
+comment1.text=\r\n\ Constructor\ untuk\ kelas\ JHotel\r\n
 comment2.params=args
 comment2.target=void\ main(java.lang.String[])
-comment2.text=\r\n\ method\ kelas\ JHotel\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ method\ main\r\n\r\n\ @param\ \ args[]\ \r\n
 numComments=3

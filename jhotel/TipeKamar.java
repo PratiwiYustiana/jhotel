@@ -7,21 +7,22 @@
  */
 public enum TipeKamar
 {
-    Single("Single"), Double("Double"), Premium("Premium");
+    SINGLE("Single"), DOUBLE("Double"), PREMIUM("Premium");
     
     private final String tipeKamar;
     
     /**
-     * Method 
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method untuk mengatur tipe kamar
+     * @param tipeKamar
      */
     private TipeKamar (String tipeKamar)
     {
         this.tipeKamar = tipeKamar;
     }
-    
+    /**
+     * method untuk mengambil tipe kamar
+     * @return tipeKamar
+     */
     public String toString()
     {
         return tipeKamar;

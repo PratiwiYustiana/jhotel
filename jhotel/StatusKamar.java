@@ -7,21 +7,22 @@
  */
 public enum StatusKamar
 {
-    Booked("Booked"), Processed("Processed"), Vacant("Vacant");
+    BOOKED("Booked"), PROCESSED("Processed"), VACANT("Vacant");
     
     private final String statusKamar;
     
     /**
-     * Method 
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method untuk mengatur status kamar
+     * @param statusKamar
      */
     private StatusKamar (String statusKamar)
     {
         this.statusKamar = statusKamar;
     }
-    
+    /**
+     * method untuk mengambil nilai status kamar
+     * @return statusKamar
+     */
     public String toString()
     {
         return statusKamar;

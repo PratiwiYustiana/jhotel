@@ -1,6 +1,6 @@
 
 /**
- * class Lokasi.
+ * class Lokasi - yang berisi koordinat beserta nama lokasi 
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -22,60 +22,62 @@ public class Lokasi
         this.y_coord = y_coord;
         this.deskripsiLokasi = deskripsiLokasi;
     }
-
     /**
-     * method kelas Lokasi
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    /**
-     * mengakses nilai X
+     * method untuk mengambil nilai pada koordinat sumbu x
+     * @return x_coord
      */
     public float getX()
     {
         return x_coord;
     }
     /**
-     * mengakses nilai Y
+     * method untuk mengambil nilai pada koordinat sumbu y
+     * @return y_coord
      */
     public float getY()
     {
         return y_coord;
     }
     /**
-     * mengakses deskripsi
+     * method untuk mengambil data deskripsi lokasi
+     * @return deskripsilokasi
      */
     public String getDeskripsi()
     {
         return deskripsiLokasi;
     }
     /**
-     * meng-update nilai X
+     * method untuk dapat mengatur nilai koordinat sumbu x
+     * @param x_coord
      */
     public void setX(float x_coord)
     {
         this.x_coord = x_coord;
     }
     /**
-     * meng-update nilai Y
+     * method untuk dapat mengatur nilai koordinat sumbu y
+     * @param y_coord
      */
     public void setY(float y_coord)
     {
         this.y_coord = y_coord;
     }
     /**
-     * meng-update deskripsi
+     * method untuk dapat mengatur data deskripsi lokasi
+     * @param deskripsi
      */
     public void setDeskripsi(String deskripsi)
     {
         deskripsiLokasi = deskripsi;
     }
     /**
-     * mencetak data deskripsiLokasi
+     * mencetak data lokasi berupa korrdinat sumbu x dan y juga deskripsi lokasi
      */
     public void printData()
     {
-        System.out.println(deskripsiLokasi);
+        System.out.println("\nLokasi");
+        System.out.println("Koordinat X\t: " + x_coord);
+        System.out.println("Koordinat Y\t: " + y_coord);
+        System.out.println("Deskripsi\t: " + deskripsiLokasi);
     }
 }
