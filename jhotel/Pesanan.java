@@ -9,9 +9,8 @@ public class Pesanan
 {
     //instance variable
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -19,12 +18,13 @@ public class Pesanan
     /**
      * Constructor untuk objek pada kelas Pesanan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
         // assign instance variables
-        this.biaya = biaya;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+        this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        nama_pelanggan = pelanggan.getNama();
+        this.kamar = kamar;
     }
     /**
      * method untuk mengambil nilai biaya;
@@ -35,28 +35,20 @@ public class Pesanan
         return biaya;
     }
     /**
+     * method untuk mengambil jumlah hari;
+     * @return jumlahHari
+     */ 
+    public double getJumlahHari()
+    {
+        return jumlahHari;
+    }
+    /**
      * method untuk mengambil nilai data pelanggan
      * @return pelanggan
      */
     public Customer getPelanggan()
     {
         return pelanggan;
-    }
-    /**
-     * method untuk mengambil nama pelanggan
-     * @return nama_pelanggan
-     */
-    public String getNamaPelanggan()
-    {
-        return nama_pelanggan;
-    }
-    /**
-     * method untuk mengambil nilai tipe kamar
-     * @return tipe_kamar
-     */
-    public TipeKamar getTipeKamar()
-    {
-        return tipe_kamar;
     }
     /**
      * method untuk mengambil status diproses
@@ -83,12 +75,20 @@ public class Pesanan
         return kamar;
     }
     /**
-     * method untuk dapat mengatur nilai biaya pada pesanan
+     * method untuk dapat mengatur biaya pada pesanan
      * @param biaya
      */
-    public void setBiaya(double biaya)
+    public void setBiaya()
     {
-        this.biaya =  biaya;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+    }
+    /**
+     * method untuk dapat mengatur jumlah hari pada pesanan
+     * @param jumlahHari
+     */
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari;
     }
     /**
      * method untuk dapat mengatur nilai data pelanggan pada pesanan
@@ -97,22 +97,6 @@ public class Pesanan
     public void setPelanggan(Customer pelanggan)
     {
         this.pelanggan = pelanggan;
-    }
-    /**
-     * method untuk dapat mengatur nama pelanggan pada pesanan
-     * @param nama_pelanggan
-     */
-    public void setNamaPelanggan(String nama_pelanggan)
-    {
-        this.nama_pelanggan = nama_pelanggan;
-    }
-    /**
-     * method untuk dapat mengatur tipe kamar
-     * @param tipe_kamar
-     */
-    public void setTipeKamar(TipeKamar tipe_kamar)
-    {
-        this.tipe_kamar = tipe_kamar;
     }
     /**
      * method untuk dapat mengatur status diproses pada pesanan
@@ -145,8 +129,9 @@ public class Pesanan
     public void printData()
     {
         System.out.println("\nPesanan");
-        System.out.println("Nama Pelanggan\t: " + nama_pelanggan);
-        System.out.println("Tipe Kamar\t: " + tipe_kamar);
+        System.out.println("Nama Pelanggan\t: " + pelanggan.getNama());
+        System.out.println("Jumlah Hari\t: " + jumlahHari);
+        System.out.println("Biaya\t\t: " + biaya);
         System.out.println("Status layanan diproses\t: " + isDiproses);
         System.out.println("Status layanan selesai\t: " + isSelesai);
     }

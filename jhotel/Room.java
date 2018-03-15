@@ -5,30 +5,27 @@
  * @author Pratiwi Yustiana
  * @version 08/03/2018
  */
-public class Room
+public abstract class Room
 {
     // instance variables 
     private Hotel hotel;
-    private int id;
     private String nomor_kamar;
     private boolean isAvailable;
-    private Customer customer;
-    private double dailyTariff;
+    protected double dailyTariff;
     private StatusKamar status_kamar;
     private Pesanan pesan;
+    private TipeKamar tipe_kamar;
 
     /**
      * Constructor for objects of class Room
      */
     public Room(Hotel hotel, String nomor_kamar, boolean isAvailable,
-    Customer customer, double dailytariff, StatusKamar status_kamar)
+    StatusKamar status_kamar)
     {
         // initialise instance variables
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
         this.isAvailable = isAvailable;
-        this.customer = customer;
-        dailyTariff = dailytariff;
         this.status_kamar = status_kamar;
         
     }
@@ -39,14 +36,6 @@ public class Room
     public Hotel getHotel()
     {
         return hotel;
-    }
-    /**
-     * method untuk mengambil id kamar
-     * @return id
-     */
-    public int getID()
-    {
-        return id;
     }
     /**
      * method untuk mengambil nomor kamar
@@ -65,18 +54,10 @@ public class Room
         return isAvailable;
     }
     /**
-     * method untuk mengambil data pelanggan pada kamar
-     * @return customer
-     */
-    public Customer getCustomer()
-    {
-        return customer;
-    }
-    /**
      * method untuk mengambil harga kamar
      * @return dailyTariff
      */
-    public double DailyTariff()
+    public double getDailyTariff()
     {
         return dailyTariff;
     }
@@ -97,20 +78,16 @@ public class Room
         return pesan;
     }
     /**
+     * method untuk tipe kamar
+     */
+    public abstract TipeKamar getTipeKamar();
+    /**
      * method untuk mengatur data hotel pada kamar
      * @param hotel
      */
     public void setHotel (Hotel hotel)
     {
         this.hotel = hotel;
-    }
-    /**
-     * method untuk mengatur id kamar
-     * @param id
-     */
-    public void setID (int id)
-    {
-        this.id = id;
     }
     /**
      * method untuk mengatur nomor kamar
@@ -127,14 +104,6 @@ public class Room
     public void setStatusAvailable(boolean isAvailable)
     {
         this.isAvailable = isAvailable;
-    }
-    /**
-     * method untuk mengatur data customer pada kamar
-     * @param customer
-     */
-    public void setCustomer (Customer customer)
-    {
-        this.customer = customer;
     }
     /**
      * method untuk mengatur harga kamar
@@ -166,9 +135,9 @@ public class Room
         System.out.println("Nama Hotel\t: " + hotel.getNama());
         System.out.println("Nomor Kamar\t: " + nomor_kamar);
         System.out.println("Tersedia\t: " + isAvailable);
-        System.out.println("Pelanggan\t: " + customer.getNama());
         System.out.println("Harga\t\t: " + dailyTariff);
-        System.out.println("Status Kamar\t: " + status_kamar);
+        System.out.println("Status Kamar\t: " + status_kamar.toString());
+        System.out.println("Tipe Kamar\t: " + getTipeKamar().toString());
     }
     
 }
