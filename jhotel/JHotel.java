@@ -5,6 +5,8 @@
  * @author Pratiwi Yustiana
  * @version 01/03/2018
  */
+
+import java.util.GregorianCalendar;
 public class JHotel
 {
     /**
@@ -22,6 +24,10 @@ public class JHotel
      */
     public static void main(String args[])
     {
+        Customer cust1 = new Customer(1, "Tiwi", new GregorianCalendar(1997,6,25).getTime());
+        
+ 
+        
         /*System.out.println("Welcome to JHotel");
         Lokasi lokasi1 = new Lokasi(10,20,"Depok");
         Customer pelanggan1 = new Customer(1, "Tiwi");
@@ -64,7 +70,7 @@ public class JHotel
         pesanan1.printData();
         */
        
-        System.out.println("Welcome to JHotel");
+        /*System.out.println("Welcome to JHotel");
         Lokasi lokasi1 = new Lokasi(10,20,"Depok");
         Hotel hotel1 = new Hotel("Bangtan Hotel", lokasi1, 5);
         Room single1 = new SingleRoom(hotel1, "1306", true, StatusKamar.VACANT);
@@ -108,6 +114,13 @@ public class JHotel
         else
         {
             System.out.println("\nSalah, bukan Double Room");
-        }
+        }*/
+        
+        /*Customer cust1 = new Customer(1, "Jimin");
+        Customer cust2 = new Customer(2, "Pratiwi");
+        Customer cust3 = new Customer(3, "Tiwi");
+        cust1.setEmail("e.t.d@");
+        cust2.setEmail("Ee_.td@ui.ac.i");
+        cust3.setEmail("Pratiwi.modul5@netlab.co");*/
     }
 }

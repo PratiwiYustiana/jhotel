@@ -78,6 +78,7 @@ public class Hotel
     public void printData()
     {
         System.out.println("\nHotel");
+        
         System.out.println("Nama Hotel\t: " + nama);
         System.out.println("Lokasi\t\t: " + lokasi.getDeskripsi());
         System.out.println("Bintang\t\t: " + bintang);

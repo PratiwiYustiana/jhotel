@@ -75,6 +75,7 @@ public class Lokasi
      */
     public void printData()
     {
+        
         System.out.println("\nLokasi");
         System.out.println("Koordinat X\t: " + x_coord);
         System.out.println("Koordinat Y\t: " + y_coord);

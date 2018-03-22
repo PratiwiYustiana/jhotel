@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=JHotel
-comment0.text=\r\n\ class\ JHotel\ -\ berisi\ method\ main\ yang\ akan\ dijalankan\ pertama\ kali\r\n\r\n\ @author\ Pratiwi\ Yustiana\r\n\ @version\ 01/03/2018\r\n
 comment1.params=
 comment1.target=JHotel()
 comment1.text=\r\n\ Constructor\ untuk\ kelas\ JHotel\r\n

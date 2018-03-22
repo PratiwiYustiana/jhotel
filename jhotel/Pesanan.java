@@ -5,6 +5,8 @@
  * @author Pratiwi Yustiana
  * @version 01/03/2018
  */
+import java.util.Date;
+
 public class Pesanan
 {
     //instance variable
@@ -14,6 +16,8 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
+    
     
     /**
      * Constructor untuk objek pada kelas Pesanan
@@ -75,6 +79,14 @@ public class Pesanan
         return kamar;
     }
     /**
+     * method untuk mengambil nilai kamar
+     * @return kamar
+     */
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    /**
      * method untuk dapat mengatur biaya pada pesanan
      * @param biaya
      */
@@ -121,6 +133,14 @@ public class Pesanan
     public void setRoom(Room kamar)
     {
         this.kamar = kamar;
+    }
+    /**
+     * method untuk mengambil nilai kamar
+     * @param tanggalPesan
+     */
+    public void setTanggalPesan(Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
     }
     /**
      * method untuk mencetak data pada pesanan
