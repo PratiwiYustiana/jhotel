@@ -24,9 +24,48 @@ public class JHotel
      */
     public static void main(String args[])
     {
-        Customer cust1 = new Customer(1, "Tiwi", new GregorianCalendar(1997,6,25).getTime());
-        
- 
+        Pesanan pesanan = new Pesanan(); 
+
+        DatabasePesanan.addPesanan(pesanan); 
+         
+        System.out.println("\n\ntoString kelas Customer untuk kondisi pertama : \n\n"); 
+        System.out.println(testing.toString()); 
+        DatabasePesanan.removePesanan(); 
+        System.out.println("\n\ntoString kelas Customer untuk kondisi kedua   : \n\n"); 
+        System.out.println(testing.toString()); 
+         
+        Lokasi lokasi = new Lokasi(99, 999, "Taman Melati"); 
+        Hotel hotel = new Hotel("Melati", lokasi, 7); 
+        Room kamar = new SingleRoom(hotel, "GK210", true, StatusKamar.Vacant); 
+        Pesanan pesan = new Pesanan(10, testing, kamar, new GregorianCalendar(2018,2,22).getTime()); 
+
+        kamar.setPesanan(pesan);  
+         
+        System.out.println("\n\ntoString kelas Room untuk kondisi pertama : \n\n"); 
+        System.out.println(kamar.toString()); 
+        kamar.setStatusAvailable(false); 
+        System.out.println("\n\ntoString kelas Room untuk kondisi kedua   : \n\n"); 
+        System.out.println(kamar.toString()); 
+         
+        pesan.setStatusDiproses(true); 
+        pesan.setStatusSelesai(false); 
+         
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi pertama : \n\n"); 
+        System.out.println(pesan.toString()); 
+
+        pesan.setStatusDiproses(false); 
+        pesan.setStatusSelesai(false); 
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi kedua   : \n\n"); 
+        System.out.println(pesan.toString()); 
+         
+        pesan.setStatusDiproses(false); 
+        pesan.setStatusSelesai(true); 
+
+        System.out.println("\n\ntoString kelas Pesanan untuk kondisi ketiga   : \n\n"); 
+        System.out.println(pesan.toString());
+        /*Customer cust1 = new Customer(1, "Tiwi", new GregorianCalendar(1997,6,25).getTime());
+        cust1.getDOB();*/
         
         /*System.out.println("Welcome to JHotel");
         Lokasi lokasi1 = new Lokasi(10,20,"Depok");

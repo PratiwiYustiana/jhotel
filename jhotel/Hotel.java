@@ -75,12 +75,11 @@ public class Hotel
      * method untuk mencetak data hotel berupa nama, lokasi, dan bintang
      * 
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("\nHotel");
+        return "\nHotel\nNama Hotel\t: " + nama + 
+        "\nLokasi\t\t: " + lokasi.getDeskripsi() + 
+        "\nBintang\t\t: " + bintang;
         
-        System.out.println("Nama Hotel\t: " + nama);
-        System.out.println("Lokasi\t\t: " + lokasi.getDeskripsi());
-        System.out.println("Bintang\t\t: " + bintang);
     }
 }

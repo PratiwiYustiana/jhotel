@@ -63,6 +63,8 @@ public class Customer
      */
     public Date getDOB()
     {
+        //System.out.printf("%1$s %2$td %2$tB %2$tY", "DOB: ", dob);
+        System.out.println(dob.toString());
         return dob;
     }
     /**
@@ -104,10 +106,15 @@ public class Customer
      * method untuk dapat mencetak id dan nama pelanggan
      * 
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("\nCustomer");
-        System.out.println("ID\t\t: " + id);
-        System.out.println("Nama\t\t: " + nama);
+        if(DatabasePesanan.getPesanan(Customer))
+        {
+            return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob+ "\nBooking order is on process";
+        }
+        else 
+        {
+            return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
+        }
     }
 }

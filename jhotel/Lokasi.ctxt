@@ -23,6 +23,6 @@ comment7.params=deskripsi
 comment7.target=void\ setDeskripsi(java.lang.String)
 comment7.text=\r\n\ method\ untuk\ dapat\ mengatur\ data\ deskripsi\ lokasi\r\n\ @param\ deskripsi\r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ mencetak\ data\ lokasi\ berupa\ korrdinat\ sumbu\ x\ dan\ y\ juga\ deskripsi\ lokasi\r\n
 numComments=9

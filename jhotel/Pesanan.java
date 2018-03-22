@@ -146,13 +146,11 @@ public class Pesanan
      * method untuk mencetak data pada pesanan
      * 
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("\nPesanan");
-        System.out.println("Nama Pelanggan\t: " + pelanggan.getNama());
-        System.out.println("Jumlah Hari\t: " + jumlahHari);
-        System.out.println("Biaya\t\t: " + biaya);
-        System.out.println("Status layanan diproses\t: " + isDiproses);
-        System.out.println("Status layanan selesai\t: " + isSelesai);
+        return "\nPesanan\nNama Pelanggan\t: " + pelanggan.getNama() + 
+        "\nJumlah Hari\t: " + jumlahHari + "\nBiaya\t\t: " + biaya + 
+        "\nStatus layanan diproses\t: " + isDiproses + 
+        "\nStatus layanan selesai\t: " + isSelesai;
     }
 }

@@ -73,12 +73,10 @@ public class Lokasi
     /**
      * mencetak data lokasi berupa korrdinat sumbu x dan y juga deskripsi lokasi
      */
-    public void printData()
+    public String toString()
     {
-        
-        System.out.println("\nLokasi");
-        System.out.println("Koordinat X\t: " + x_coord);
-        System.out.println("Koordinat Y\t: " + y_coord);
-        System.out.println("Deskripsi\t: " + deskripsiLokasi);
+        return ("\nLokasi\nKoordinat X\t: " + x_coord + 
+        "\nKoordinat Y\t: " + y_coord + 
+        "\nDeskripsi\t: " + deskripsiLokasi);
     }
 }
