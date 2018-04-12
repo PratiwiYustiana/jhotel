@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=DatabaseCustomer
+comment0.text=\r\n\ class\ DatabaseCustomer.\r\n\r\n\ @author\ Pratiwi\ Yustiana\r\n\ @version\ 01/03/2018\r\n
+comment1.params=
+comment1.target=DatabaseCustomer()
+comment1.text=\r\n\ Constructor\ untuk\ objek\ pada\ kelas\ DatabaseCustomer\r\n
+comment2.params=baru
+comment2.target=boolean\ addCustomer(Customer)
+comment2.text=\r\n\ method\ kelas\ DatabaseCostumer\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment3.params=id
+comment3.target=boolean\ removeCustomer(int)
+comment4.params=
+comment4.target=java.lang.String[]\ getCustomerDatabase()
+numComments=5
