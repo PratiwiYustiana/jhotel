@@ -20,15 +20,15 @@ public class JHotel
     /**
      * method main
      *
-     * @param  args[] 
      */
     public static void main(String args[])
     {
-        Customer cust1 = new Customer(1, "Tiwi", 
+        System.out.println("Welcome to JHotel");
+        /*Customer cust1 = new Customer(1, "Tiwi",
         new GregorianCalendar(2018,03,22).getTime());
         
         
-        /*System.out.println("Welcome to JHotel");
+
         Lokasi lokasi1 = new Lokasi(10,20,"Depok");
         Customer pelanggan1 = new Customer(1, "Tiwi");
         Hotel hotel1 = new Hotel("Bangtan Hotel", lokasi1, 5);
@@ -114,9 +114,9 @@ public class JHotel
         else
         {
             System.out.println("\nSalah, bukan Double Room");
-        }*/
+        }
         
-        /*Customer cust1 = new Customer(1, "Jimin");
+        Customer cust1 = new Customer(1, "Jimin");
         Customer cust2 = new Customer(2, "Pratiwi");
         Customer cust3 = new Customer(3, "Tiwi");
         cust1.setEmail("e.t.d@");

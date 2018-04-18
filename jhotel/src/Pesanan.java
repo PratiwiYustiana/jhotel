@@ -5,9 +5,7 @@
  * @author Pratiwi Yustiana
  * @version 01/03/2018
  */
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
-import java.util.Date;
+import java.util.*;
 
 public class Pesanan
 {
@@ -28,12 +26,13 @@ public class Pesanan
      */
     public Pesanan(double jumlahHari, Customer pelanggan)
     {
-        isAktif=true;
-        this.jumlahHari=jumlahHari;
-        this.pelanggan=pelanggan;
-        this.kamar=kamar;
+        this.isAktif = true;
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
         this.biaya = jumlahHari * getRoom().getDailyTariff();
         this.tanggalPesan=new GregorianCalendar().getTime();
+        this.id = DatabasePesanan.getLastPesananID()+1;
         // initialise instance variables
 
     }
@@ -143,11 +142,11 @@ public class Pesanan
     }
     /**
      * method untuk dapat mengatur status selesai pada pesanan
-     * @param selesai
+     * @param diproses
      */
-    public void setStatusSelesai(boolean selesai)
+    public void setStatusSelesai(boolean diproses)
     {
-        isSelesai = selesai;
+        isSelesai = diproses;
     }
     /**
      * method untuk dapat mengatur data kamar pada pesanan
@@ -171,9 +170,15 @@ public class Pesanan
      */
     public String toString()
     {
-        return "\nPesanan\nNama Pelanggan\t: " + pelanggan.getNama() + 
-        "\nJumlah Hari\t: " + jumlahHari + "\nBiaya\t\t: " + biaya + 
-        "\nStatus layanan diproses\t: " + isDiproses + 
-        "\nStatus layanan selesai\t: " + isSelesai;
+        String final_status = "KOSONG";
+        if(isDiproses == true && isSelesai == false) final_status = "DIPROSES";
+        else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
+        else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
+
+        return "Dibuat oleh " + getPelanggan().getNama()
+                + ". Proses booking untuk " + getRoom().getHotel().getNama()
+                + "kamar nomor " + getRoom().getNomorKamar()
+                + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
+                + ". Status: " + final_status + ".";
     }
 }

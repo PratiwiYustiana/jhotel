@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class DatabaseHotel here.
@@ -8,7 +9,8 @@
 public class DatabaseHotel
 {
     // instance variables - replace the example below with your own
-    private String[] list_hotel;
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
+    private static int LAST_HOTEL_ID = 0;
 
     /**
      * Constructor for objects of class DatabaseHotel
@@ -22,20 +24,50 @@ public class DatabaseHotel
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     *
      */
+    public static ArrayList<Hotel> getHotelDatabase()
+    {
+        return HOTEL_DATABASE;
+    }
+
+    public static int getLastHotelID()
+    {
+        return LAST_HOTEL_ID;
+    }
+
     public boolean addHotel(Hotel baru)
     {
         // put your code here
-        return false;
+        for (Hotel hotel : HOTEL_DATABASE) {
+            if(hotel.getID() == baru.getID())
+                return false;
+        }
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getID();
+        return true;
     }
-    public boolean removeHotel(int id)
-    {
-        return false;
-    }
-    public String[] getHotelDatabase()
-    {
+
+    public static Hotel getHotel(int id){
+        for (Hotel hotel : HOTEL_DATABASE) {
+            if (hotel.getID() == id)
+                return hotel;
+        }
         return null;
+    }
+
+    public static boolean removeHotel(int id) {
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if(hotel.getID()==id){
+                for (Room kamar :
+                        DatabaseRoom.getRoomsFromHotel(hotel)) {
+                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                }
+                HOTEL_DATABASE.remove(hotel);
+                return true;
+            }
+        }
+        return false;
     }
 }

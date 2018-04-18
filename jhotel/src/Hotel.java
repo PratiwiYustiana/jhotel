@@ -11,6 +11,7 @@ public class Hotel
     private String nama;
     private Lokasi lokasi;
     private int bintang;
+    private int id;
 
     /**
      * Constructor untuk objek pada kelas Hotel
@@ -22,6 +23,12 @@ public class Hotel
         this.nama = nama; 
         this.lokasi = lokasi;
         this.bintang = bintang;
+        this.id = DatabaseHotel.getLastHotelID()+1;
+    }
+
+    public int getID()
+    {
+        return id;
     }
     /**
      * method untuk mengambil nilai bintang pada hotel
@@ -46,6 +53,11 @@ public class Hotel
     public Lokasi getLokasi()
     {
         return lokasi;
+    }
+
+    public void setID(int id)
+    {
+        this.id = id;
     }
     /**
      * method untuk dapat mengatur nama hotel
@@ -77,9 +89,10 @@ public class Hotel
      */
     public String toString()
     {
-        return "\nHotel\nNama Hotel\t: " + nama + 
-        "\nLokasi\t\t: " + lokasi.getDeskripsi() + 
-        "\nBintang\t\t: " + bintang;
+        return "\nHotel\n"
+                + "Nama Hotel\t: " + getNama()
+                + "\nLokasi\t\t: " + getLokasi().getDeskripsi()
+                + "\nBintang\t\t: " + getBintang();
         
     }
 }

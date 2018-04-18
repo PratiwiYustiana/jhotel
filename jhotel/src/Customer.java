@@ -5,23 +5,25 @@
  * @author Pratiwi Yustiana
  * @version 01/03/2018
  */
-import java.util.Date;
-import java.util.regex.*;
-import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 public class Customer
 {
     protected int id;
     protected String nama;
     protected String email;
     protected Date dob;
+
+    SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     
     /**
      * Constructor untuk objek pada kelas Customer
      */
-    public Customer(int id, String nama, Date dob)
+    public Customer(String nama, Date dob)
     {
         // assign instance variables
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
     }
@@ -29,10 +31,9 @@ public class Customer
     int tahun) 
     {
         // initialise instance variables 
-        this.id = id; 
-        this.nama = nama; 
-        GregorianCalendar gc = 
-        new GregorianCalendar(tahun,bulan,tanggal); 
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
+        this.nama = nama;
+        this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
     /**
      * method untuk mengambil nomor id pelanggan
@@ -65,7 +66,7 @@ public class Customer
     public Date getDOB()
     {
         //System.out.printf("%1$s %2$td %2$tB %2$tY", "DOB: ", dob);
-        System.out.println(dob.toString());
+        //System.out.println(dob.toString());
         return dob;
     }
     /**
@@ -84,21 +85,19 @@ public class Customer
     {
         this.nama = nama;
     }
-    /**
-     * method untuk dapat mengatur nama pelanggan
-     * @param nama
-     */
+
     public void setEmail(String email)
     {
-        String REGEX = "[^.][^\\s]+\\b@\\b[^-][^\\s]+"; 
-        Pattern p = Pattern.compile(REGEX); 
-        Matcher m = p.matcher(email); 
-        System.out.println("\nEmail " + email + "\n" + m.matches()); 
+        if (email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")){
+            System.out.println("Email valid");
+            this.email = email;
+        }
+        else {
+            System.out.println("Email tidak valid");
+        }
     }
-    /**
-     * method untuk dapat mengatur nama pelanggan
-     * @param nama
-     */
+
     public void setDOB(Date dob)
     {
         this.dob = dob;
@@ -109,13 +108,22 @@ public class Customer
      */
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(Customer))
+        if(DatabasePesanan.getPesananAktif(this)==null)
         {
-            return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob+ "\nBooking order is on process";
+            return "\nCustomer"
+                    + "\nCustomer ID\t\t:" + getID()
+                    +"\nNama\t\t:"+ getNama()
+                    +"\nE-mail\t\t:"+ getEmail()
+                    +"\nDate of birth\t\t:"+ dobformat.format(getDOB());
         }
         else 
         {
-            return "\nCustomer"+ "\nNama\t"+ nama + "\nid\t" +id +"\nE-mail"+email+"\nDate of birth"+ dob;
+            return "\nCustomer"
+                    + "\nCustomer ID\t\t:" + getID()
+                    +"\nNama\t\t:"+ getNama()
+                    +"\nE-mail\t\t:"+ getEmail()
+                    +"\nDate of birth\t\t:"+ dobformat.format(getDOB())
+                    + "\nBooking order is on process";
         }
     }
 }
