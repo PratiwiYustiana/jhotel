@@ -16,8 +16,7 @@ public abstract class Room
     /**
      * Constructor for objects of class Room
      */
-    public Room(Hotel hotel, String nomor_kamar,
-    StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
         // initialise instance variables
         this.hotel = hotel;
@@ -101,14 +100,14 @@ public abstract class Room
         {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
-                    + "\nHarga \t\t:" + getDailyTariff()
-                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
+                    + "\nHarga \t\t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t:" + getStatusKamar().toString();
         }
         else {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
-                    + "\nHarga \t\t:" + getDailyTariff()
-                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString()
+                    + "\nHarga \t\t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t:" + getStatusKamar().toString()
                     + "Pelanggan \t\t:" + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
     }

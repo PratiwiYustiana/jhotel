@@ -36,12 +36,12 @@ public class DatabaseHotel
         return LAST_HOTEL_ID;
     }
 
-    public boolean addHotel(Hotel baru)
+    public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
         // put your code here
         for (Hotel hotel : HOTEL_DATABASE) {
-            if(hotel.getID() == baru.getID())
-                return false;
+            if(hotel.getID() == baru.getID()||hotel.getNama()==baru.getNama())
+                throw new HotelSudahAdaException(baru);
         }
         HOTEL_DATABASE.add(baru);
         LAST_HOTEL_ID = baru.getID();
@@ -56,18 +56,22 @@ public class DatabaseHotel
         return null;
     }
 
-    public static boolean removeHotel(int id) {
+    public static boolean removeHotel(int id) throws HotelTidakDitemukanException {
         for (Hotel hotel :
                 HOTEL_DATABASE) {
             if(hotel.getID()==id){
                 for (Room kamar :
                         DatabaseRoom.getRoomsFromHotel(hotel)) {
-                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    try {
+                        DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                    } catch (RoomTidakDitemukanException e) {
+                        e.getPesan();
+                    }
                 }
                 HOTEL_DATABASE.remove(hotel);
                 return true;
             }
         }
-        return false;
+        throw new HotelTidakDitemukanException(id);
     }
 }

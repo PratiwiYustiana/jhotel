@@ -30,7 +30,7 @@ public class Pesanan
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
         this.kamar = kamar;
-        this.biaya = jumlahHari * getRoom().getDailyTariff();
+        //this.biaya = jumlahHari * getRoom().getDailyTariff();
         this.tanggalPesan=new GregorianCalendar().getTime();
         this.id = DatabasePesanan.getLastPesananID()+1;
         // initialise instance variables
@@ -175,10 +175,16 @@ public class Pesanan
         else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
         else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
 
-        return "Dibuat oleh " + getPelanggan().getNama()
-                + ". Proses booking untuk " + getRoom().getHotel().getNama()
-                + "kamar nomor " + getRoom().getNomorKamar()
-                + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
-                + ". Status: " + final_status + ".";
+        if (getRoom()==null){
+            return "\nPesanan" +"\nDibuat oleh " + getPelanggan().getNama()
+                    +". \nStatus: " + final_status + ".";
+        }
+        else {
+            return "Pesanan" + "\nDibuat oleh " + getPelanggan().getNama()
+                    + ". Proses booking untuk " + getRoom().getHotel().getNama()
+                    + "kamar nomor " + getRoom().getNomorKamar()
+                    + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString()
+                    + ". \nStatus: " + final_status + ".";
+        }
     }
 }

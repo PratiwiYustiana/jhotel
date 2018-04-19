@@ -22,6 +22,7 @@ public class DatabasePesanan
         // initialise instance variables
 
     }
+
     /**
      * method kelas DatabasePesanan
      */
@@ -33,7 +34,7 @@ public class DatabasePesanan
     {
         return LAST_PESANAN_ID;
     }
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if(getPesananAktif(baru.getPelanggan()) == null){
             PESANAN_DATABASE.add(baru);
@@ -41,8 +42,9 @@ public class DatabasePesanan
             return true;
         }
         else {
-            return false;
+            throw new PesananSudahAdaException(baru);
         }
+
     }
     public static Pesanan getPesanan(int id)
     {
@@ -74,7 +76,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public static boolean removePesanan(Pesanan pesan) {
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException {
         for (Pesanan pesandb : PESANAN_DATABASE) {
             if (pesandb == pesan) {
                 if (pesan.getRoom() != null) {
@@ -90,6 +92,6 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
     }
 }

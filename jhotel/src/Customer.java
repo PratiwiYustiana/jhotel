@@ -20,19 +20,21 @@ public class Customer
     /**
      * Constructor untuk objek pada kelas Customer
      */
-    public Customer(String nama, Date dob)
+    public Customer(String nama, Date dob, String email)
     {
         // assign instance variables
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
+        this.email=email;
     }
-    public Customer(int id, String nama, int tanggal, int bulan, 
-    int tahun) 
+    public Customer(String nama, int tanggal, int bulan,
+    int tahun, String email)
     {
         // initialise instance variables 
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
+        this.email=email;
         this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
     }
     /**
@@ -112,17 +114,17 @@ public class Customer
         {
             return "\nCustomer"
                     + "\nCustomer ID\t\t:" + getID()
-                    +"\nNama\t\t:"+ getNama()
-                    +"\nE-mail\t\t:"+ getEmail()
-                    +"\nDate of birth\t\t:"+ dobformat.format(getDOB());
+                    +"\nNama\t\t\t:"+ getNama()
+                    +"\nE-mail\t\t\t:"+ getEmail()
+                    +"\nDate of birth\t:"+ dobformat.format(getDOB());
         }
         else 
         {
             return "\nCustomer"
                     + "\nCustomer ID\t\t:" + getID()
-                    +"\nNama\t\t:"+ getNama()
-                    +"\nE-mail\t\t:"+ getEmail()
-                    +"\nDate of birth\t\t:"+ dobformat.format(getDOB())
+                    +"\nNama\t\t\t:"+ getNama()
+                    +"\nE-mail\t\t\t:"+ getEmail()
+                    +"\nDate of birth\t:"+ dobformat.format(getDOB())
                     + "\nBooking order is on process";
         }
     }
