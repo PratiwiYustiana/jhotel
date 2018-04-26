@@ -96,7 +96,7 @@ public abstract class Room
 
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this) == null)
+        if(DatabasePesanan.getPesananAktif(this) == null)
         {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
@@ -108,7 +108,7 @@ public abstract class Room
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
                     + "\nHarga \t\t\t:" + getDailyTariff()
                     + "\nStatus Kamar \t:" + getStatusKamar().toString()
-                    + "Pelanggan \t\t:" + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+                    + "Pelanggan \t\t:" + DatabasePesanan.getPesananAktif(this).getPelanggan().getNama();
         }
     }
 }

@@ -14,28 +14,37 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+    protected String password;
 
     SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     
     /**
      * Constructor untuk objek pada kelas Customer
      */
-    public Customer(String nama, Date dob, String email)
+    public Customer(String nama, Date dob, String email, String password)
     {
         // assign instance variables
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.dob = dob;
         this.email=email;
+        this.password=password;
     }
+
+
     public Customer(String nama, int tanggal, int bulan,
-    int tahun, String email)
+    int tahun, String email, String password)
     {
         // initialise instance variables 
         this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
         this.email=email;
         this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
+        this.password=password;
+    }
+
+    public String getPassword(){
+        return password;
     }
     /**
      * method untuk mengambil nomor id pelanggan
@@ -108,6 +117,10 @@ public class Customer
      * method untuk dapat mencetak id dan nama pelanggan
      * 
      */
+
+    public void setPassword(){
+        this.password=password;
+    }
     public String toString()
     {
         if(DatabasePesanan.getPesananAktif(this)==null)

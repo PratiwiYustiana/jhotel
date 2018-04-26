@@ -30,6 +30,7 @@ public class DatabaseCustomer
     {
         return LAST_CUSTOMER_ID;
     }
+
     /**
      * method kelas DatabaseCostumer
      *
@@ -53,6 +54,14 @@ public class DatabaseCustomer
         for (Customer cust :
                 CUSTOMER_DATABASE) {
             if (cust.getID() == id) return cust;
+        }
+        return null;
+    }
+
+    public static Customer getCustomerLogin( String email, String password){
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if (cust.getEmail().equals(email) && cust.getPassword().equals(password)) return cust;
         }
         return null;
     }

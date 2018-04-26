@@ -26,7 +26,49 @@ public class JHotel
      */
     public static void main(String args[])
     {
+
         SpringApplication.run(JHotel.class, args);
+        try {
+        DatabaseHotel.addHotel(new Hotel("Hilton", new Lokasi(4, 3, "Jati Padang"),4));
+
+        } catch(HotelSudahAdaException e){
+        e.getPesan();
+        }
+
+        try {
+
+            DatabaseHotel.addHotel(new Hotel("Aston", new Lokasi(2, 2, "Cilandak"),5));
+        } catch(HotelSudahAdaException e){
+            e.getPesan();
+        }
+
+        try {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1),"666"));
+
+
+        } catch(RoomSudahAdaException e){
+            e.getPesan();
+        }
+
+
+        try {
+
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "999"));
+
+
+        } catch(RoomSudahAdaException e){
+            e.getPesan();
+        }
+
+
+        try {
+
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(2),"333"));
+
+        } catch(RoomSudahAdaException e){
+            e.getPesan();
+        }
+
         /*System.out.println("Welcome to JHotel");
         System.out.println("===============TES EXCEPTION===============\n");
         try {
