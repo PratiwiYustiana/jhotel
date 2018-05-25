@@ -20,8 +20,8 @@ public enum StatusKamar
         this.statusKamar = statusKamar;
     }
     /**
-     * method untuk mengambil nilai status kamar
-     * @return statusKamar
+     * method untuk mencetak status kamar
+     * 
      */
     public String toString()
     {

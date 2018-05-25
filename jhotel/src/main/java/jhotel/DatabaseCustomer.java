@@ -2,7 +2,7 @@ package jhotel;
 import java.util.ArrayList;
 
 /**
- * class DatabaseCustomer.
+ * class DatabaseCustomer - berisi database pelangan
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -20,21 +20,25 @@ public class DatabaseCustomer
         // initialise instance variables
         
     }
-
+    /**
+     * method untuk mengambil database customer yang bersangkutan
+     *@return CUSTOMER_DATABASE
+     */
     public static ArrayList<Customer> getCustomerDatabase()
     {
         return CUSTOMER_DATABASE;
     }
-
+    /**
+     * method untuk mengambil id customer terakhir
+     *@return LAST_CUSTOMER_ID
+     */
     public static int getLastCustomerID()
     {
         return LAST_CUSTOMER_ID;
     }
 
     /**
-     * method kelas DatabaseCostumer
-     *
-     *
+     * method untuk menambah customer pada database
      */
     public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException
     {
@@ -49,7 +53,9 @@ public class DatabaseCustomer
         LAST_CUSTOMER_ID = baru.getID();
         return true;
     }
-
+    /**
+     * method untuk mengambil data customer yang bersangkutan
+     */
     public static Customer getCustomer(int id){
         for (Customer cust :
                 CUSTOMER_DATABASE) {
@@ -57,7 +63,9 @@ public class DatabaseCustomer
         }
         return null;
     }
-
+    /**
+     * method untuk mengambil data customer setelah login
+     */
     public static Customer getCustomerLogin( String email, String password){
         for (Customer cust :
                 CUSTOMER_DATABASE) {
@@ -65,7 +73,9 @@ public class DatabaseCustomer
         }
         return null;
     }
-
+    /**
+     * method untuk menghapus data customer yang bersangkutan
+     */
     public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException
         {
         for (Customer cust :

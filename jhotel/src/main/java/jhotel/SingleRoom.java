@@ -1,6 +1,6 @@
 package jhotel;
 /**
- * class SingleRoom
+ * class SingleRoom - kamar bertipe single
  *
  * @author Pratiwi Yustiana
  * @version 15/03/2018
@@ -17,7 +17,7 @@ public class SingleRoom extends Room
     {
         // initialise instance variables
         super(hotel, nomor_kamar);
-        
+        setDailyTariff(2000000);
     }
 
     /**
@@ -27,7 +27,14 @@ public class SingleRoom extends Room
     @Override
     public TipeKamar getTipeKamar()
     {
-        // put your code here
         return TIPE_KAMAR;
+    }
+    /**
+     * method mengatur dailytariff
+     * @param dailytariff
+     */
+    public void setDailyTariff(double dailytariff)
+    {
+        dailyTariff=dailytariff;
     }
 }

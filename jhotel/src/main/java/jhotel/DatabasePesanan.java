@@ -2,7 +2,7 @@ package jhotel;
 import java.util.ArrayList;
 
 /**
- * class DatabasePesanan.
+ * class DatabasePesanan - berisi database pesanan
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -24,16 +24,22 @@ public class DatabasePesanan
     }
 
     /**
-     * method kelas DatabasePesanan
+     * method untuk mengambil database pesanan
      */
     public static ArrayList<Pesanan> getPesananDatabase()
     {
         return PESANAN_DATABASE;
     }
+    /**
+     * method untuk mengambil id pesanan terakhir
+     */
     public static int getLastPesananID()
     {
         return LAST_PESANAN_ID;
     }
+    /**
+     * method untuk menambah pesanan
+     */
     public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if(getPesananAktif(baru.getPelanggan()) == null){
@@ -46,6 +52,9 @@ public class DatabasePesanan
         }
 
     }
+    /**
+     * method untuk mengambil data pesanan yang bersangkutan
+     */
     public static Pesanan getPesanan(int id)
     {
         for(Pesanan pesan : PESANAN_DATABASE){
@@ -56,6 +65,10 @@ public class DatabasePesanan
         return null;
     }
 
+    /**
+     * method untuk mengambil pesanan yang aktif
+     *@param kamar
+     */
     public static Pesanan getPesananAktif(Room kamar)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
@@ -66,6 +79,10 @@ public class DatabasePesanan
         return null;
     }
 
+    /**
+     * method untuk mengambil pesanan ynag aktif
+     *@param pelanggan
+     */
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
@@ -75,7 +92,9 @@ public class DatabasePesanan
         }
         return null;
     }
-
+    /**
+     * method untuk menghapus pesanan dalam database
+     */
     public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException {
         for (Pesanan pesandb : PESANAN_DATABASE) {
             if (pesandb == pesan) {

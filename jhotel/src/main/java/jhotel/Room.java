@@ -94,6 +94,10 @@ public abstract class Room
         this.status_kamar = status_kamar;
     }
 
+    /**
+     * method untuk mencetak data pada kamar
+     * 
+     */
     public String toString()
     {
         if(DatabasePesanan.getPesananAktif(this) == null)

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class DatabaseRoom here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class DatabaseRoom
 {
@@ -25,9 +25,7 @@ public class DatabaseRoom
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     *
+     * method untuk menambah kamar baru pada database
      */
     public static boolean addRoom(Room baru) throws RoomSudahAdaException
     {
@@ -45,7 +43,9 @@ public class DatabaseRoom
     }
     else return false;
     }
-
+    /**
+     * method untuk mengambil data kamar pada database
+     */
     public static Room getRoom(Hotel hotel,String nomor_kamar){
         for (Room kamar :
                 ROOM_DATABASE) {
@@ -55,7 +55,9 @@ public class DatabaseRoom
         }
         return null;
     }
-
+    /**
+     * method untuk mengambil data kamar hotel
+     */
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel){
         ArrayList<Room> toReturn = new ArrayList<>();
         for (Room kamar :
@@ -66,7 +68,9 @@ public class DatabaseRoom
         }
         return toReturn;
     }
-
+    /**
+     * method untuk mengambil data kamar kosong
+     */
     public static ArrayList<Room> getVacantRooms(){
         ArrayList<Room> toReturn = new ArrayList<>();
         for (Room kamar :
@@ -77,7 +81,9 @@ public class DatabaseRoom
         }
         return toReturn;
     }
-
+    /**
+     * method untuk menghapus data kamar pada database
+     */
     public static boolean removeRoom(Hotel hotel, String nomor_kamar)throws RoomTidakDitemukanException{
         for (Room kamar :
                 ROOM_DATABASE) {

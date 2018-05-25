@@ -1,6 +1,6 @@
 package jhotel;
 /**
- * class Pesanan - berisi customer beserta pesanannya
+ * class Pesanan - berisi data pesanan pelanggan
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -36,13 +36,16 @@ public class Pesanan
         // initialise instance variables
 
     }
-
+    /**
+     * method untuk mengambil nilai id pesanan
+     * @return id
+     */ 
     public int getID() {
         return id;
     }
 
     /**
-     * method untuk mengambil nilai biaya;
+     * method untuk mengambil nilai biaya
      * @return biaya
      */ 
     public double getBiaya()
@@ -50,7 +53,7 @@ public class Pesanan
         return biaya;
     }
     /**
-     * method untuk mengambil jumlah hari;
+     * method untuk mengambil jumlah hari
      * @return jumlahHari
      */ 
     public double getJumlahHari()
@@ -65,7 +68,10 @@ public class Pesanan
     {
         return pelanggan;
     }
-
+    /**
+     * method untuk mengambil status aktif
+     * @return isAktif
+     */
     public boolean getStatusAktif() {
         return isAktif;
     }
@@ -95,13 +101,17 @@ public class Pesanan
         return kamar;
     }
     /**
-     * method untuk mengambil nilai kamar
-     * @return kamar
+     * method untuk mengambil tanggal pesanan
+     * @return tanggalPesan
      */
     public Date getTanggalPesan()
     {
         return tanggalPesan;
     }
+    /**
+     * method untuk mengatur nilai id pesanan
+     * @param id
+     */ 
     public void setID(int id){
         this.id=id;
     }
@@ -123,12 +133,16 @@ public class Pesanan
     }
     /**
      * method untuk dapat mengatur nilai data pelanggan pada pesanan
-     *
+     *@param pelanggan
      */
     public void setPelanggan(Customer pelanggan)
     {
         this.pelanggan = pelanggan;
     }
+    /**
+     * method untuk dapat mengatur status aktif pada pesanan
+     * @param aktif
+     */ 
     public void setStatusAktif(boolean aktif){
         isAktif=aktif;
     }

@@ -1,4 +1,10 @@
 package jhotel;
+/**
+ * class PesananSudahAdaException - exception jika pesanan yang baru ditambahkan sudah ada pada database
+ *
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
+ */
 public class PesananSudahAdaException extends Exception {
     private Pesanan pesanan_error;
 

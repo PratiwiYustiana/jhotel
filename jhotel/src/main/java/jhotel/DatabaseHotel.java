@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class DatabaseHotel here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
  */
 public class DatabaseHotel
 {
@@ -23,20 +23,22 @@ public class DatabaseHotel
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     *
+     * method untuk mangambil data pada database hotel
      */
     public static ArrayList<Hotel> getHotelDatabase()
     {
         return HOTEL_DATABASE;
     }
-
+    /**
+     * method untuk mengambil id hotel terakhir
+     */
     public static int getLastHotelID()
     {
         return LAST_HOTEL_ID;
     }
-
+    /**
+     * method untuk menambahkan hotel baru
+     */
     public static boolean addHotel(Hotel baru) throws HotelSudahAdaException
     {
         // put your code here
@@ -48,7 +50,9 @@ public class DatabaseHotel
         LAST_HOTEL_ID = baru.getID();
         return true;
     }
-
+    /**
+     * method untuk mengambil data hotel yang bersangkutan
+     */
     public static Hotel getHotel(int id){
         for (Hotel hotel : HOTEL_DATABASE) {
             if (hotel.getID() == id)
@@ -56,7 +60,9 @@ public class DatabaseHotel
         }
         return null;
     }
-
+    /**
+     * method untuk menghapus data hotel yang bersangkutan
+     */
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException {
         for (Hotel hotel :
                 HOTEL_DATABASE) {

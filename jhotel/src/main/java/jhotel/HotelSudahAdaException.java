@@ -1,4 +1,10 @@
 package jhotel;
+ /**
+ * class HotelSudahAdaException - exception jika hotel yang baru ditambahkan sudah ada dalam database
+ *
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
+ */
 public class HotelSudahAdaException extends Exception {
     private Hotel hotel_error;
 

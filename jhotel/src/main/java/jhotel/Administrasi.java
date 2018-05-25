@@ -1,4 +1,4 @@
-package jhotel;
+package jhotel; 
 /**
  * class Administrasi - mengatur jalannya pesanan
  *

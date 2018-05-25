@@ -20,10 +20,10 @@ public class PesananController {
     }
 
     @RequestMapping(value = "/bookpesanan", method = RequestMethod.POST)
-    public Pesanan buatPesanan(@RequestParam(value="jumlah hari") int jumlah_hari,
-                               @RequestParam(value="id customer") int id_customer,
-                               @RequestParam(value="id hotel") int id_hotel,
-                               @RequestParam(value="nomor kamar") String nomor_kamar) {
+    public Pesanan buatPesanan(@RequestParam(value="jumlah_hari") int jumlah_hari,
+                               @RequestParam(value="id_customer") int id_customer,
+                               @RequestParam(value="id_hotel") int id_hotel,
+                               @RequestParam(value="nomor_kamar") String nomor_kamar) {
         Pesanan pesanan = new Pesanan(jumlah_hari, DatabaseCustomer.getCustomer(id_customer));
         try {
             DatabasePesanan.addPesanan(pesanan);

@@ -20,8 +20,7 @@ public enum TipeKamar
         this.tipeKamar = tipeKamar;
     }
     /**
-     * method untuk mengambil tipe kamar
-     * @return tipeKamar
+     * method untuk mencetak tipe kamar
      */
     public String toString()
     {

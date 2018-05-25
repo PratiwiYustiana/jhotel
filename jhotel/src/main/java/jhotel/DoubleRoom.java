@@ -1,6 +1,6 @@
 package jhotel;
 /**
- * Write a description of class DoubleRoom here.
+ * class DoubleRoom - room bertipe double
  *
  * @author Pratiwi Yustiana
  * @version 15/03/2018
@@ -18,10 +18,11 @@ public class DoubleRoom extends Room
     {
         // initialise instance variables
         super(hotel, nomor_kamar);
+        setDailyTariff(3500000);
     }
 
     /**
-     * An example of a method
+     * method untuk mengambil data customer2
      * @return    customer
      */
     public Customer getCustomer2(Customer customer2)
@@ -38,11 +39,19 @@ public class DoubleRoom extends Room
         return TIPE_KAMAR;
     }
     /**
-     * method
+     * method mengatur customer2
      * @param customer2
      */
     public void setCustomer2(Customer customer2)
     {
         this.customer2 = customer2;
+    }
+    /**
+     * method mengatur dailytariff
+     * @param dailytariff
+     */
+    public void setDailyTariff(double dailytariff)
+    {
+        dailyTariff=dailytariff;
     }
 }

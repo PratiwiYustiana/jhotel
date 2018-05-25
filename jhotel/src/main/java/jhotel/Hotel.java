@@ -25,7 +25,10 @@ public class Hotel
         this.bintang = bintang;
         this.id = DatabaseHotel.getLastHotelID()+1;
     }
-
+    /**
+     * method untuk mengambil nilai id hotel
+     *@return id
+     */
     public int getID()
     {
         return id;
@@ -54,7 +57,10 @@ public class Hotel
     {
         return lokasi;
     }
-
+    /**
+     * method untuk dapat mengatur id hotel
+     *@param id
+     */
     public void setID(int id)
     {
         this.id = id;

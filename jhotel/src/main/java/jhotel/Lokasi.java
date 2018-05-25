@@ -3,7 +3,7 @@ package jhotel;
  * class Lokasi - yang berisi koordinat beserta nama lokasi 
  *
  * @author Pratiwi Yustiana
- * @version 01/03/2018
+ * @version 01/03/2018 
  */
 public class Lokasi
 {

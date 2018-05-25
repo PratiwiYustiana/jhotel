@@ -1,4 +1,10 @@
 package jhotel;
+/**
+ * class RoomTidakDitemukanException - exception jika ingin menghapus room yang tidak ada pada database
+ *
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
+ */
 public class RoomTidakDitemukanException extends Exception {
     private Hotel hotel_error;
     private String room_error;

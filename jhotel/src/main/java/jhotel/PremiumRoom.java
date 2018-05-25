@@ -1,6 +1,6 @@
 package jhotel;
 /**
- * Write a description of class PremiumRoom here.
+ * class PremiumRoom - room bertipe premium
  *
  * @author Pratiwi Yustiana
  * @version 15/03/2018
@@ -8,6 +8,7 @@ package jhotel;
 public class PremiumRoom extends Room
 {
     // instance variables
+
     private double DISCOUNT = 0.3;
     private TipeKamar TIPE_KAMAR = TipeKamar.PREMIUM;
 
@@ -18,6 +19,7 @@ public class PremiumRoom extends Room
     {
         // initialise instance variables
         super(hotel, nomor_kamar);
+        setDailyTariff(5000000);
     }
 
     /**
@@ -30,16 +32,16 @@ public class PremiumRoom extends Room
         return TIPE_KAMAR;
     }
     /**
-     * method
-     * @param
+     * method untuk mengambil discount
+     * @return DISCOUNT
      */
     public double getDiscount()
     {
         return DISCOUNT;
     }
     /**
-     * method
-     * @param
+     * method harga kamar per hari
+     * @return dailytariff
      */
     public void setDailyTariff(double dailytariff)
     {

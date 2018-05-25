@@ -1,4 +1,10 @@
 package jhotel;
+/**
+ * class PesananTidakDitemukanException - exception jika ingin menghapus pesanan yang tidak ada pada database
+ *
+ * @author Pratiwi Yustiana
+ * @version 01/03/2018
+ */
 public class PesananTidakDitemukanException extends Exception {
     private Customer pelanggan_error;
 

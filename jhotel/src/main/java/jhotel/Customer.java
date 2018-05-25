@@ -1,6 +1,6 @@
 package jhotel;
 /**
- * class Customer - berisi data pelanggan berupa id dan nama
+ * class Customer - berisi data pelanggan
  *
  * @author Pratiwi Yustiana
  * @version 01/03/2018
@@ -19,7 +19,7 @@ public class Customer
     SimpleDateFormat dobformat = new SimpleDateFormat("dd MMMMMMMMM yyyy");
     
     /**
-     * Constructor untuk objek pada kelas Customer
+     * Constructor 1 untuk objek pada kelas Customer
      */
     public Customer(String nama, Date dob, String email, String password)
     {
@@ -31,7 +31,9 @@ public class Customer
         this.password=password;
     }
 
-
+    /**
+     * Constructor 2 untuk objek pada kelas Customer
+     */
     public Customer(String nama, int tanggal, int bulan,
     int tahun, String email, String password)
     {
@@ -42,7 +44,10 @@ public class Customer
         this.dob = new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
         this.password=password;
     }
-
+    /**
+     * method untuk mengambil password pelanggan
+     * @return password
+     */
     public String getPassword(){
         return password;
     }
@@ -63,7 +68,7 @@ public class Customer
         return nama;
     }
     /**
-     * method untuk mengambil nama pelanggan
+     * method untuk mengambil email pelanggan
      * @return nama
      */
     public String getEmail()
@@ -71,7 +76,7 @@ public class Customer
         return email;
     }
     /**
-     * method untuk mengambil nama pelanggan
+     * method untuk mengambil tanggal lahir pelanggan
      * @return nama
      */
     public Date getDOB()
@@ -96,7 +101,10 @@ public class Customer
     {
         this.nama = nama;
     }
-
+    /**
+     * method untuk mengatur data email pelanggan
+     * @param email
+     */
     public void setEmail(String email)
     {
         if (email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -108,19 +116,27 @@ public class Customer
             System.out.println("Email tidak valid");
         }
     }
-
+    /**
+     * method untuk mengatur tanggal lahir
+     * @param dob
+     */
     public void setDOB(Date dob)
     {
         this.dob = dob;
     }
     /**
+     * method untuk mengatur password
+     * @param password
+     */
+    public void setPassword()
+    {
+        this.password=password;
+    }
+
+    /**
      * method untuk dapat mencetak id dan nama pelanggan
      * 
      */
-
-    public void setPassword(){
-        this.password=password;
-    }
     public String toString()
     {
         if(DatabasePesanan.getPesananAktif(this)==null)
